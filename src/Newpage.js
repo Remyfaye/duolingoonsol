@@ -1,10 +1,8 @@
 import React from "react";
 import XIcon from "@mui/icons-material/X";
-import FacebookSharpIcon from "@mui/icons-material/FacebookSharp";
 // import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import image from "./duo.jpg";
-import telegram from "./telegram.png";
 
 function Newpage() {
   return (

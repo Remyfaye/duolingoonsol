@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "./kvideo.mp4";
 import image from "./duo.jpg";
@@ -16,28 +16,6 @@ function Home() {
     setIsPlaying(true);
   };
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
-  //   useEffect(() => {
-  //     const video = videoRef.current;
-  //     if (!isMuted) {
-  //       alert("false");
-  //       video
-  //         .play()
-  //         .then(() => {
-  //           setIsMuted(false);
-  //           setTimeout(() => {
-  //             video.muted = false; // Unmute after a short delay
-  //           }, 500);
-  //         })
-  //         .catch((error) => {
-  //           console.error("Autoplay was prevented:", error);
-  //         });
-  //     } else {
-  //       alert("true");
-
-  //       video.muted = true; // Ensure the video is muted to prevent autoplay blocking
-  //     }
-  //   }, []);
 
   const handleVideoEnd = () => {
     navigate("/new-page"); // Replace "/new-page" with your desired route
