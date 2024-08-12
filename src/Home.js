@@ -1,11 +1,21 @@
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "./kvideo.mp4";
+import image from "./duo.jpg";
 
 function Home() {
   const videoRef = useRef(null);
   const navigate = useNavigate(); // Initialize useNavigate
-  const [isMuted, setIsMuted] = useState(true);
+  //   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    const video = videoRef.current;
+    video.muted = false;
+    video.play();
+    setIsPlaying(true);
+  };
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   //   useEffect(() => {
   //     const video = videoRef.current;
@@ -17,7 +27,7 @@ function Home() {
   //           setIsMuted(false);
   //           setTimeout(() => {
   //             video.muted = false; // Unmute after a short delay
-  //           }, 2000);
+  //           }, 500);
   //         })
   //         .catch((error) => {
   //           console.error("Autoplay was prevented:", error);
@@ -26,21 +36,6 @@ function Home() {
   //       alert("true");
 
   //       video.muted = true; // Ensure the video is muted to prevent autoplay blocking
-  //       //   video
-  //       //     .play()
-  //       //     .then(() => {
-
-  //       //       //   setIsMuted(false);
-  //       //       //   // setTimeout(() => {
-  //       //       //   video.muted = false; // Unmute after a short delay
-  //       //       //   // }, 2000);
-  //       //     })
-  //       //     .catch((error) => {
-  //       //       console.error("Autoplay was prevented:", error);
-  //       //     });
-  //       //   if (!isMuted) {
-  //       //     video.muted = false;
-  //       //   }
   //     }
   //   }, []);
 
@@ -49,41 +44,55 @@ function Home() {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* <video
-        // ref={videoRef}
-        autoplay
-        muted
-        loop // Set loop to false if you want it to play once
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        onEnded={handleVideoEnd}
-        onError={(e) => console.error("Video playback error:", e)}
-      >
-        <source src={logo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
-      <button
-        className={
-          isMuted
-            ? "relative z-50 bg-red-400 top-10 left-10 p-3 rounded-xl "
-            : "relative z-50 bg-blue-400 top-10 left-10 p-3 rounded-xl"
-        }
-        onClick={() => setIsMuted(!isMuted)}
-      >
-        {isMuted ? "unmute" : "mute"}
-      </button>
-      <video
-        // ref={videoRef}
-        onEnded={handleVideoEnd}
-        autoPlay
-        loop={false}
-        muted
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      >
-        <source src={logo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
+    <>
+      {!isVideoPlaying ? (
+        <div className="flex flex-col justify-center items-center h-[100vh]">
+          <h1 className="font-bold text-[#7ac70c] text-2xl my-3">
+            {" "}
+            $Duo on sol
+          </h1>
+
+          <img
+            className="w-[200px] h-[200px] object-contain"
+            src={image}
+            alt=""
+          />
+
+          <p className="font-bold font-poppins text-3xl my-10 text-black/70">
+            Don’t break your streak
+          </p>
+
+          <button
+            onClick={() => setIsVideoPlaying(true)}
+            className="bg-[#7ac70c] shadow-xl  w-[50%] text-white  px-5 py-2 rounded-xl "
+          >
+            Get Started
+          </button>
+        </div>
+      ) : (
+        <div className="relative w-full h-screen overflow-hidden">
+          {!isPlaying && (
+            <button
+              onClick={handlePlay}
+              className="absolute z-10 text-white bg-black p-4 rounded"
+            >
+              unmute
+            </button>
+          )}
+          <video
+            ref={videoRef}
+            muted={!isPlaying} // Initially muted
+            autoPlay // Autoplay only after interaction
+            loop
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            onEnded={handleVideoEnd}
+          >
+            <source src={logo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      )}
+    </>
   );
 }
 
