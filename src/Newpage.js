@@ -1,8 +1,10 @@
 import React from "react";
 import XIcon from "@mui/icons-material/X";
 import FacebookSharpIcon from "@mui/icons-material/FacebookSharp";
-import InstagramIcon from "@mui/icons-material/Instagram";
+// import InstagramIcon from "@mui/icons-material/Instagram";
+import TelegramIcon from "@mui/icons-material/Telegram";
 import image from "./duo.jpg";
+import telegram from "./telegram.png";
 
 function Newpage() {
   return (
@@ -16,25 +18,19 @@ function Newpage() {
       </p>
 
       {/* socials */}
-      <div className="flex  gap-5 mb-10 bg-[#7ac70c] rounded-full px-8 py-3">
-        <div>
-          {/* <img src={logo} alt="dd" /> */}
-          <a href="https://x.com/duoonsol">
-            <XIcon fontSize="large" />
-          </a>
-          {/* <p>twitter</p> */}
-        </div>
-        <div>
-          {/* <a href="">
-
-          </a> */}
-          <FacebookSharpIcon fontSize="large" />
-        </div>
-        <div>
-          {/* <img src={logo} alt="dd" />
-          <p>telegram</p> */}
-          <InstagramIcon fontSize="large" />
-        </div>
+      <div className="flex  gap-5 mb-10  px-8 py-3">
+        <a
+          className="flex  gap-5 mb-10 bg-[#7ac70c] rounded-full p-3"
+          href="https://x.com/duoonsol"
+        >
+          <XIcon fontSize="large" />
+        </a>
+        <a
+          className="flex  gap-5 mb-10 bg-[#7ac70c] rounded-full p-3"
+          href="https://t.me/duolingosol"
+        >
+          <TelegramIcon fontSize="large" />
+        </a>
       </div>
     </div>
   );

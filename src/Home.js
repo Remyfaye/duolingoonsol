@@ -64,7 +64,7 @@ function Home() {
 
           <button
             onClick={() => setIsVideoPlaying(true)}
-            className="bg-[#7ac70c] shadow-3xl   w-[60%] text-white  px-5 py-3 rounded-xl "
+            className="bg-[#7ac70c] shadow-3xl text-xl  w-[60%] text-white  px-5 py-3 rounded-xl "
           >
             Get Started
           </button>
