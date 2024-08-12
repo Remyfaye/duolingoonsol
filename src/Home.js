@@ -7,42 +7,42 @@ function Home() {
   const navigate = useNavigate(); // Initialize useNavigate
   const [isMuted, setIsMuted] = useState(true);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!isMuted) {
-      alert("false");
-      video
-        .play()
-        .then(() => {
-          setIsMuted(false);
-          setTimeout(() => {
-            video.muted = false; // Unmute after a short delay
-          }, 2000);
-        })
-        .catch((error) => {
-          console.error("Autoplay was prevented:", error);
-        });
-    } else {
-      alert("true");
+  //   useEffect(() => {
+  //     const video = videoRef.current;
+  //     if (!isMuted) {
+  //       alert("false");
+  //       video
+  //         .play()
+  //         .then(() => {
+  //           setIsMuted(false);
+  //           setTimeout(() => {
+  //             video.muted = false; // Unmute after a short delay
+  //           }, 2000);
+  //         })
+  //         .catch((error) => {
+  //           console.error("Autoplay was prevented:", error);
+  //         });
+  //     } else {
+  //       alert("true");
 
-      video.muted = true; // Ensure the video is muted to prevent autoplay blocking
-      //   video
-      //     .play()
-      //     .then(() => {
+  //       video.muted = true; // Ensure the video is muted to prevent autoplay blocking
+  //       //   video
+  //       //     .play()
+  //       //     .then(() => {
 
-      //       //   setIsMuted(false);
-      //       //   // setTimeout(() => {
-      //       //   video.muted = false; // Unmute after a short delay
-      //       //   // }, 2000);
-      //     })
-      //     .catch((error) => {
-      //       console.error("Autoplay was prevented:", error);
-      //     });
-      //   if (!isMuted) {
-      //     video.muted = false;
-      //   }
-    }
-  }, []);
+  //       //       //   setIsMuted(false);
+  //       //       //   // setTimeout(() => {
+  //       //       //   video.muted = false; // Unmute after a short delay
+  //       //       //   // }, 2000);
+  //       //     })
+  //       //     .catch((error) => {
+  //       //       console.error("Autoplay was prevented:", error);
+  //       //     });
+  //       //   if (!isMuted) {
+  //       //     video.muted = false;
+  //       //   }
+  //     }
+  //   }, []);
 
   const handleVideoEnd = () => {
     navigate("/new-page"); // Replace "/new-page" with your desired route
@@ -73,7 +73,7 @@ function Home() {
         {isMuted ? "unmute" : "mute"}
       </button>
       <video
-        ref={videoRef}
+        // ref={videoRef}
         onEnded={handleVideoEnd}
         autoPlay
         loop={false}
