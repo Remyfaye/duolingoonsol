@@ -7,7 +7,7 @@ import image from "./duo.jpg";
 function Newpage() {
   return (
     <div className="flex flex-col justify-center items-center h-[100vh]">
-      <h1 className="font-bold text-2xl"> $Duo on sol</h1>
+      <h1 className="font-bold text-[#7ac70c] text-2xl"> $Duo on sol</h1>
 
       <img className="w-[200px] h-[200px] object-contain" src={image} alt="" />
 
