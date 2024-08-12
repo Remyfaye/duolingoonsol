@@ -36,7 +36,7 @@ function Home() {
             alt=""
           />
 
-          <p className="font-bold font-poppins text-3xl my-10 text-black/70">
+          <p className="font-bold font-poppins text-3xl my-[3rem] text-black/60">
             Don’t break your streak
           </p>
 
