@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "./kvideo.mp4";
 
@@ -36,7 +36,7 @@ function Home() {
           onClick={handlePlay}
           className="absolute z-10 text-white bg-black p-4 rounded text-xl"
         >
-          unmute
+          play
         </button>
       )}
 

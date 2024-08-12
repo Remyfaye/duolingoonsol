@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import XIcon from "@mui/icons-material/X";
 import FacebookSharpIcon from "@mui/icons-material/FacebookSharp";
 import InstagramIcon from "@mui/icons-material/Instagram";
