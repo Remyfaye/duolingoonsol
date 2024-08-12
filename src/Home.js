@@ -46,7 +46,7 @@ function Home() {
   return (
     <>
       {!isVideoPlaying ? (
-        <div className="flex flex-col justify-center items-center h-[100vh]">
+        <div className="flex flex-col justify-center items-center h-[90vh]">
           <h1 className="font-bold text-[#7ac70c] text-2xl my-3">
             {" "}
             $Duo on sol
@@ -64,7 +64,7 @@ function Home() {
 
           <button
             onClick={() => setIsVideoPlaying(true)}
-            className="bg-[#7ac70c] shadow-xl  w-[50%] text-white  px-5 py-2 rounded-xl "
+            className="bg-[#7ac70c] shadow-3xl   w-[60%] text-white  px-5 py-3 rounded-xl "
           >
             Get Started
           </button>
@@ -83,9 +83,9 @@ function Home() {
             ref={videoRef}
             muted={!isPlaying} // Initially muted
             autoPlay // Autoplay only after interaction
-            loop
             className="absolute top-0 left-0 w-full h-full object-cover"
             onEnded={handleVideoEnd}
+            controls
           >
             <source src={logo} type="video/mp4" />
             Your browser does not support the video tag.
