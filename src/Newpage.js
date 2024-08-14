@@ -3,6 +3,7 @@ import XIcon from "@mui/icons-material/X";
 // import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import image from "./duo.jpg";
+import ds from "./ds.png";
 
 function Newpage() {
   return (
@@ -28,6 +29,12 @@ function Newpage() {
           href="https://t.me/duolingosol"
         >
           <TelegramIcon fontSize="large" />
+        </a>
+        <a
+          className="flex  gap-5 mb-10 bg-[#7ac70c] rounded-full p-3"
+          href="https://dexscreener.com/solana/gyvzupss2fwxau3csh6n79wm9yw8zi9tqk6i8j7v8zue"
+        >
+          <img className="w-[30px] h-[30px]" src={ds} alt="ss" />
         </a>
       </div>
     </div>
